@@ -1,0 +1,204 @@
+/* =========================================
+   1. GŁÓWNE STYLE I RESET (Global)
+   ========================================= */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Używamy Montserrat do czytania (z image_7) */
+    font-family: 'Montserrat', sans-serif;
+    color: #444;
+    line-height: 1.8;
+    background-color: #fff;
+}
+
+/* =========================================
+   2. TYPOGRAFIA I ELEMENTY DEKORACYJNE
+   ========================================= */
+/* Nagłówki używają szeryfowej Playfair Display (image_6) */
+h1, .welcome-name-cursive {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+.vertical-divider {
+    width: 1px;
+    height: 100px;
+    background-color: #ccc;
+    margin: 0 auto;
+}
+
+/* =========================================
+   3. NAGŁÓWEK I NAWIGACJA (Menu z image_7)
+   ========================================= */
+.main-header {
+    background-color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #eee; /* Delikatna linia jak na image_7 */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.logo {
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #888;
+}
+
+/* =========================================
+   4. HERO SEKCJA (To zdjęcie tła z image_6)
+   ========================================= */
+.hero {
+    /* !!! WAŻNE: Podmień 'twoje-zdjecie-hero.jpg' na dokładną nazwę pliku, który pobrałaś z Wix !!! */
+    background-image: url('./tło.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 80vh; /* Zajmuje 80% wysokości ekranu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px; /* Miejsce pod przyklejonym menu */
+    position: relative;
+    /* Filtr grayscale aby nadać styl jak na wzorze */
+    filter: grayscale(100%) brightness(1.1) contrast(0.9);
+}
+
+/* Maska nakładająca subtelny, szary odcień na zdjęcie (efekt kamienia/marmuru z image_6) */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(220, 220, 220, 0.4); /* Delikatny szary, 40% przezroczystości */
+}
+
+.hero-content {
+    text-align: center;
+    position: relative; /* Aby tekst był nad maską */
+    z-index: 10;
+}
+
+.hero-logo {
+    font-size: 4rem;
+    color: #333;
+    margin-bottom: 10px;
+    letter-spacing: 5px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   5. SEKCJA POWITALNA (Z cytatem z image_6)
+   ========================================= */
+.welcome {
+    background-color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.welcome-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.welcome-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: #888;
+    margin: 40px 0;
+    line-height: 1.6;
+}
+
+.welcome-text-small {
+    font-size: 0.9rem;
+    color: #555;
+    text-transform: lowercase;
+    margin-bottom: 5px;
+}
+
+.welcome-name-cursive {
+    font-size: 2.2rem;
+    color: #333;
+}
+
+.hero {
+    position: relative; /* Kontener dla warstw */
+    height: 70vh;
+    width: 100%;
+    overflow: hidden; /* Ukrywa fragmenty zdjęć wystające poza sekcję */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Zdjęcie w tle (JPEG) */
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Wypełnia całą sekcję */
+    filter: grayscale(100%) brightness(0.9);
+    z-index: 1; /* Najniższa warstwa */
+}
+
+/* Twoje zdjęcie (PNG) */
+.hero-main-image {
+    position: absolute;
+    bottom: 0; /* Przyklejone do dołu */
+    height: 90%; /* Wielkość zdjęcia względem sekcji */
+    z-index: 2; /* Nad tłem */
+}
+
+/* Tekst nad zdjęciami */
+.hero-content {
+    position: relative;
+    z-index: 3; /* Najwyższa warstwa */
+    text-align: center;
+    color: #fff; /* Jeśli tekst ma być widoczny na zdjęciu */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
