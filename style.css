@@ -1,204 +1,524 @@
-/* =========================================
-   1. GŁÓWNE STYLE I RESET (Global)
-   ========================================= */
-   * {
+/* === RESET === */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* === BASE === */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    /* Używamy Montserrat do czytania (z image_7) */
     font-family: 'Montserrat', sans-serif;
-    color: #444;
+    font-weight: 300;
+    color: #333;
     line-height: 1.8;
-    background-color: #fff;
+    background: #fff;
 }
 
-/* =========================================
-   2. TYPOGRAFIA I ELEMENTY DEKORACYJNE
-   ========================================= */
-/* Nagłówki używają szeryfowej Playfair Display (image_6) */
-h1, .welcome-name-cursive {
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
-}
-
-.vertical-divider {
-    width: 1px;
-    height: 100px;
-    background-color: #ccc;
-    margin: 0 auto;
-}
-
-/* =========================================
-   3. NAGŁÓWEK I NAWIGACJA (Menu z image_7)
-   ========================================= */
+/* === HEADER === */
 .main-header {
-    background-color: #fff;
-    padding: 20px 0;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;
-    border-bottom: 1px solid #eee; /* Delikatna linia jak na image_7 */
+    z-index: 100;
+    background: #fff;
+    border-bottom: 1px solid #eee;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 22px 50px;
 }
 
 .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    color: #333;
+    text-decoration: none;
     text-transform: lowercase;
-    letter-spacing: 2px;
-    font-size: 1rem;
 }
 
 .main-nav ul {
-    list-style: none;
     display: flex;
-    gap: 30px;
+    list-style: none;
+    gap: 40px;
 }
 
 .main-nav a {
-    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
     color: #333;
+    text-decoration: none;
     text-transform: lowercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-    font-weight: 400;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 .main-nav a:hover {
-    color: #888;
+    color: #aaa;
 }
 
-/* =========================================
-   4. HERO SEKCJA (To zdjęcie tła z image_6)
-   ========================================= */
+/* === HAMBURGER === */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: #333;
+    transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* === HERO === */
 .hero {
-    /* !!! WAŻNE: Podmień 'twoje-zdjecie-hero.jpg' na dokładną nazwę pliku, który pobrałaś z Wix !!! */
-    background-image: url('./tło.jpg'); 
-    background-size: cover;
-    background-position: center;
-    height: 80vh; /* Zajmuje 80% wysokości ekranu */
+    position: relative;
+    height: 100vh;
+    min-height: 550px;
+    overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 80px; /* Miejsce pod przyklejonym menu */
-    position: relative;
-    /* Filtr grayscale aby nadać styl jak na wzorze */
-    filter: grayscale(100%) brightness(1.1) contrast(0.9);
+    align-items: flex-end;
+    padding-bottom: 60px;
+    margin-top: 65px;
 }
 
-/* Maska nakładająca subtelny, szary odcień na zdjęcie (efekt kamienia/marmuru z image_6) */
-.hero::after {
-    content: '';
+.hero-bg {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    background: rgba(220, 220, 220, 0.4); /* Delikatny szary, 40% przezroczystości */
+    object-fit: cover;
+    filter: grayscale(100%) brightness(1.05);
+    z-index: 1;
 }
 
-.hero-content {
+.hero-portrait {
+    position: absolute;
+    bottom: 0;
+    height: 88%;
+    z-index: 2;
+    object-fit: contain;
+    object-position: bottom;
+    filter: grayscale(30%);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 3;
     text-align: center;
-    position: relative; /* Aby tekst był nad maską */
-    z-index: 10;
+    color: #fff;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.25);
 }
 
-.hero-logo {
+.hero-text h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
     font-size: 4rem;
-    color: #333;
-    margin-bottom: 10px;
-    letter-spacing: 5px;
+    letter-spacing: 10px;
+    text-transform: lowercase;
+    margin-bottom: 6px;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    color: #555;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.75rem;
     letter-spacing: 10px;
     text-transform: uppercase;
 }
 
-/* =========================================
-   5. SEKCJA POWITALNA (Z cytatem z image_6)
-   ========================================= */
-.welcome {
-    background-color: #fff;
-    padding: 80px 0;
+/* === CYTAT === */
+.quote-section {
+    padding: 80px 20px 90px;
+    text-align: center;
+    background: #fff;
+}
+
+.vertical-line {
+    width: 1px;
+    height: 80px;
+    background: #ddd;
+    margin: 0 auto 50px;
+}
+
+.quote-section blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.45rem;
+    color: #999;
+    max-width: 650px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+}
+
+.quote-sub {
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    color: #bbb;
+    margin-bottom: 10px;
+    text-transform: lowercase;
+}
+
+.quote-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 2.2rem;
+    color: #555;
+    font-weight: 300;
+}
+
+/* === WSPÓLNE DLA SEKCJI === */
+.section-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 80px 50px;
+}
+
+.section-label {
+    margin-bottom: 40px;
+}
+
+.section-number {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: #ccc;
+    margin-bottom: 6px;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    letter-spacing: 5px;
+    text-transform: lowercase;
+    color: #555;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #eee;
+}
+
+/* === O MNIE === */
+.section-about {
+    background: #f9f9f9;
+}
+
+.section-about .section-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.92rem;
+    color: #666;
+    line-height: 2;
+    margin-bottom: 22px;
+    max-width: 700px;
+}
+
+/* === JAK DZIAŁAM === */
+.section-how {
+    background: #fff;
+}
+
+.how-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.how-images {
+    display: flex;
+    gap: 12px;
+}
+
+.how-images img {
+    width: 50%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    filter: grayscale(15%);
+}
+
+.how-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.92rem;
+    color: #666;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+/* === INSTAGRAM === */
+.section-instagram {
+    background: #f9f9f9;
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.instagram-grid a {
+    display: block;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.instagram-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.4s ease;
+    filter: grayscale(20%);
+}
+
+.instagram-grid a:hover img {
+    transform: scale(1.04);
+    filter: grayscale(0%);
+}
+
+/* === KONTAKT === */
+.section-contact {
+    background: #fff;
     text-align: center;
 }
 
-.welcome-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
+.section-contact .section-title {
+    text-align: left;
 }
 
-.welcome-quote {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 1.4rem;
-    color: #888;
-    margin: 40px 0;
-    line-height: 1.6;
+.contact-intro {
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
 }
 
-.welcome-text-small {
-    font-size: 0.9rem;
-    color: #555;
-    text-transform: lowercase;
-    margin-bottom: 5px;
+.contact-email {
+    display: inline-block;
+    font-size: 0.95rem;
+    color: #444;
+    text-decoration: none;
+    letter-spacing: 2px;
+    margin-bottom: 45px;
+    transition: color 0.3s;
+    border-bottom: 1px solid transparent;
 }
 
-.welcome-name-cursive {
-    font-size: 2.2rem;
-    color: #333;
+.contact-email:hover {
+    color: #aaa;
+    border-bottom-color: #ddd;
 }
 
-.hero {
-    position: relative; /* Kontener dla warstw */
-    height: 70vh;
+.newsletter {
+    margin-bottom: 40px;
+}
+
+.newsletter form {
+    display: inline-flex;
+    max-width: 380px;
     width: 100%;
-    overflow: hidden; /* Ukrywa fragmenty zdjęć wystające poza sekcję */
+}
+
+.newsletter input[type="email"] {
+    flex: 1;
+    padding: 13px 18px;
+    border: 1px solid #ddd;
+    border-right: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: #444;
+    outline: none;
+    background: #fff;
+}
+
+.newsletter input[type="email"]::placeholder {
+    color: #bbb;
+}
+
+.newsletter input[type="email"]:focus {
+    border-color: #bbb;
+}
+
+.newsletter button {
+    padding: 13px 24px;
+    background: #333;
+    color: #fff;
+    border: 1px solid #333;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: lowercase;
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s;
+    white-space: nowrap;
+}
+
+.newsletter button:hover {
+    background: #555;
+    border-color: #555;
+}
+
+.social-icon {
+    display: inline-block;
+    color: #bbb;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #888;
+}
+
+/* === FOOTER === */
+.main-footer {
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+    padding: 28px 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
-/* Zdjęcie w tle (JPEG) */
-.hero-bg-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Wypełnia całą sekcję */
-    filter: grayscale(100%) brightness(0.9);
-    z-index: 1; /* Najniższa warstwa */
+.main-footer p {
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    color: #ccc;
 }
 
-/* Twoje zdjęcie (PNG) */
-.hero-main-image {
-    position: absolute;
-    bottom: 0; /* Przyklejone do dołu */
-    height: 90%; /* Wielkość zdjęcia względem sekcji */
-    z-index: 2; /* Nad tłem */
+.main-footer a {
+    color: #ccc;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
 }
 
-/* Tekst nad zdjęciami */
-.hero-content {
-    position: relative;
-    z-index: 3; /* Najwyższa warstwa */
-    text-align: center;
-    color: #fff; /* Jeśli tekst ma być widoczny na zdjęciu */
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+.main-footer a:hover {
+    color: #999;
+}
+
+/* === MOBILE === */
+@media (max-width: 900px) {
+    .how-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .how-images {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 18px 25px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        border-bottom: 1px solid #eee;
+        padding: 25px 0;
+    }
+
+    .main-nav.open {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+    }
+
+    .hero {
+        margin-top: 58px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+        letter-spacing: 6px;
+    }
+
+    .hero-text .hero-subtitle {
+        letter-spacing: 7px;
+    }
+
+    .section-inner {
+        padding: 60px 25px;
+    }
+
+    .instagram-grid {
+        gap: 8px;
+    }
+
+    .newsletter form {
+        flex-direction: column;
+    }
+
+    .newsletter input[type="email"] {
+        border-right: 1px solid #ddd;
+        border-bottom: none;
+    }
+
+    .newsletter button {
+        border-top: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.9rem;
+        letter-spacing: 4px;
+    }
+
+    .quote-section blockquote {
+        font-size: 1.15rem;
+    }
+
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
