@@ -1,0 +1,160 @@
+/* === OFERTA HERO === */
+.oferta-hero {
+    background: #fff;
+    padding: 32px 0 38px;
+}
+
+.oferta-line-top {
+    width: 1px;
+    height: 60px;
+    background: #ddd;
+    margin: 0 auto;
+}
+
+.oferta-section-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.95rem;
+    color: #aaa;
+    text-align: center;
+    letter-spacing: 0.15em;
+    margin: 18px 0 50px;
+}
+
+.oferta-section-label em {
+    font-style: italic;
+}
+
+.oferta-heading-block {
+    padding: 0 5% 0 7%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.oferta-heading {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 2.6rem;
+    color: #2e2e2e;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    margin: 0;
+}
+
+.oferta-with {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.95rem;
+    color: #888;
+    margin-left: 28px;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+    vertical-align: middle;
+}
+
+.oferta-with strong {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #2e2e2e;
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+}
+
+/* === PAKIETY === */
+.oferta-section {
+    background: #fff;
+}
+
+.oferta-zone .about-layout {
+    align-items: stretch;
+    grid-template-columns: 45fr 55fr;
+}
+
+.oferta-zone .about-layout--image-left {
+    grid-template-columns: 55fr 45fr;
+}
+
+.oferta-zone .about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.oferta-zone .about-text p {
+    font-size: 0.81rem;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.oferta-section-line {
+    margin: 0 auto;
+}
+
+.oferta-zone {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.oferta-zone--white {
+    background: #fff;
+}
+
+.oferta-package-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 24px;
+}
+
+.oferta-package-header .about-number,
+.oferta-package-header .about-title {
+    font-size: 0.86rem;
+}
+
+
+.oferta-package-name {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-style: italic;
+    font-size: 1.5rem !important;
+    color: #555 !important;
+    font-weight: 300 !important;
+    margin-top: 30px !important;
+    margin-bottom: 0 !important;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+/* === CTA BUTTON === */
+.oferta-cta-btn {
+    display: block;
+    width: fit-content;
+    margin: 32px auto 0;
+    padding: 12px 28px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: #333;
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: background 0.3s, color 0.3s;
+}
+
+.oferta-cta-btn:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* === CYTAT KOŃCOWY === */
+.oferta-closing {
+    padding: 70px 20px 80px;
+}
+
+.oferta-closing blockquote {
+    font-size: 1.1rem;
+    max-width: 750px;
+}
