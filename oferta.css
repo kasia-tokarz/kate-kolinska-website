@@ -27,9 +27,20 @@
 }
 
 .oferta-heading-block {
-    padding: 0 5% 0 7%;
+    padding: 50px 5% 50px 7%;
     max-width: 1200px;
     margin: 0 auto;
+    background: #fff;
+}
+
+.oferta-heading-block--right {
+    text-align: right;
+    padding: 50px 7% 50px 5%;
+}
+
+.oferta-with--right {
+    margin-left: 0;
+    margin-right: 36%;
 }
 
 .oferta-heading {
@@ -43,14 +54,15 @@
 }
 
 .oferta-with {
+    display: block;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 0.95rem;
     color: #888;
-    margin-left: 28px;
+    margin-top: 10px;
+    margin-left: 36%;
     white-space: nowrap;
     letter-spacing: 0.05em;
-    vertical-align: middle;
 }
 
 .oferta-with strong {
@@ -126,6 +138,39 @@
     letter-spacing: 0.03em;
 }
 
+/* === CYTAT ŚRODKOWY === */
+.oferta-mid-quote {
+    background: #fff;
+    padding: 60px 5% 60px 5%;
+    text-align: right;
+}
+
+.oferta-mid-quote blockquote {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.mid-quote-big {
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 2.08rem;
+    color: #2e2e2e;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+}
+
+.mid-quote-small {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.75rem;
+    color: #888;
+    letter-spacing: 0.05em;
+    margin-top: 5px;
+}
+
 /* === CTA BUTTON === */
 .oferta-cta-btn {
     display: block;
@@ -152,9 +197,14 @@
 /* === CYTAT KOŃCOWY === */
 .oferta-closing {
     padding: 70px 20px 80px;
+    text-align: center;
 }
 
-.oferta-closing blockquote {
-    font-size: 1.1rem;
-    max-width: 750px;
+.oferta-closing .oferta-heading-block {
+    padding: 0 5%;
 }
+
+.oferta-closing .oferta-with {
+    margin-left: 0;
+}
+
