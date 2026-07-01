@@ -213,7 +213,8 @@ body {
     font-size: 0.78rem;
     letter-spacing: 2px;
     color: #bbb;
-    margin-bottom: 2px;
+    margin-bottom: 0;
+    line-height: 1;
     text-transform: lowercase;
 }
 
@@ -362,6 +363,10 @@ body {
     background: #fff;
 }
 
+.section-how .about-header-lined {
+    padding-bottom: 40px;
+}
+
 /* === INSTAGRAM === */
 .section-instagram {
     background: #fff;
@@ -402,6 +407,10 @@ body {
     background: #fff;
 }
 
+.section-contact .about-header-lined {
+    padding-bottom: 70px;
+}
+
 .contact-zone {
     text-align: center;
     padding-left: 5%;
@@ -429,6 +438,14 @@ body {
 .contact-email:hover {
     color: #aaa;
     border-bottom-color: #ddd;
+}
+
+.newsletter-label {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: #bbb;
+    margin-bottom: 14px;
+    text-transform: lowercase;
 }
 
 .newsletter {

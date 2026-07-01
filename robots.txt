@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kate-kolinska.pl/sitemap.xml

@@ -38,6 +38,10 @@
     padding: 50px 7% 50px 5%;
 }
 
+.oferta-heading-block--dress .oferta-with {
+    margin-top: 1px;
+}
+
 .oferta-with--right {
     margin-left: 0;
     margin-right: 36%;
