@@ -1,0 +1,374 @@
+/* ============================================
+   RESPONSIVE – kate-kolinska.pl
+   Wszystkie media queries dla strony głównej
+   i podstrony oferty
+   ============================================ */
+
+/* === TABLET (max 1024px) === */
+@media (max-width: 1024px) {
+    .about-layout {
+        gap: 30px;
+    }
+
+    .oferta-heading {
+        font-size: 2.1rem;
+    }
+}
+
+/* === MOBILE (max 768px) === */
+@media (max-width: 768px) {
+
+    /* --- Header / Nav --- */
+    .header-container {
+        padding: 18px 25px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        border-bottom: 1px solid #eee;
+        padding: 25px 0;
+    }
+
+    .main-nav.open {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+    }
+
+    /* --- Hero --- */
+    .hero {
+        height: 24vh;
+        min-height: 145px;
+        overflow: visible;
+    }
+
+    .hero-portrait {
+        left: 4%;
+        right: auto;
+        height: 112%;
+        width: auto;
+        object-fit: contain;
+        object-position: bottom left;
+    }
+
+    .hero-text {
+        right: 11%;
+        left: auto;
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+        text-align: right;
+        width: auto;
+    }
+
+    .hero-text h1 {
+        font-size: 1.3rem;
+        letter-spacing: 3px;
+        margin-bottom: 3px;
+        text-shadow: 0 2px 18px rgba(0,0,0,0.85);
+    }
+
+    .hero-subtitle {
+        font-size: 0.62rem;
+        letter-spacing: 6px;
+        text-shadow: 0 1px 12px rgba(0,0,0,0.85);
+    }
+
+    /* --- About layouts – single column --- */
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .about-layout .about-image {
+        order: 1;
+        height: 300px;
+    }
+
+    .about-layout .about-text {
+        order: 2;
+        padding: 26px 6%;
+    }
+
+    .about-layout .about-text p {
+        font-size: 0.82rem;
+        line-height: 1.75;
+        margin-bottom: 10px;
+    }
+
+    .about-layout .about-text p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* --- Sections --- */
+    .section-inner {
+        padding: 60px 25px;
+    }
+
+    .section-instagram .about-zone {
+        padding-bottom: 0;
+    }
+
+    .section-contact .about-header-lined {
+        padding-top: 0;
+        padding-bottom: 40px;
+    }
+
+    /* --- Quote section – bliżej siebie, kreski krótsze --- */
+    .vertical-line {
+        height: 45px;
+    }
+
+    .about-connector {
+        height: 45px;
+        margin: 6px auto 0;
+    }
+
+    .quote-section blockquote {
+        margin-bottom: 6px;
+    }
+
+    .quote-sub {
+        margin-bottom: 2px;
+    }
+
+    .quote-name {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+    }
+
+    /* --- O mnie header – mniej białego --- */
+    .about-header {
+        padding: 16px 20px 14px;
+    }
+
+    /* --- Gray zone – ciemniejsze tło, padding nad zdjęciem --- */
+    .section-about .about-zone {
+        background: #e8e8e8;
+        padding-top: 22px;
+        padding-bottom: 0;
+    }
+
+    .section-how .about-zone {
+        background: #e8e8e8;
+        padding-top: 22px;
+        padding-bottom: 14px;
+    }
+
+    .section-how .about-header-lined {
+        padding-top: 0;
+        padding-bottom: 14px;
+    }
+
+    .section-how .about-layout .about-image {
+        height: auto;
+    }
+
+    .section-how .about-layout .about-image img {
+        height: auto;
+        object-fit: initial;
+    }
+
+    /* --- Closing quote --- */
+    .closing-quote {
+        padding: 0 20px 10px;
+    }
+
+    /* --- Instagram header --- */
+    .section-instagram .about-header-lined {
+        gap: 8px;
+    }
+
+    .section-instagram .about-header-lined .vertical-line {
+        height: 45px;
+        margin-bottom: 4px;
+    }
+
+    .section-instagram .about-header-lined .vertical-line:last-child {
+        display: none;
+    }
+
+    /* --- Instagram grid --- */
+    .instagram-grid {
+        gap: 8px;
+    }
+
+    /* --- Newsletter --- */
+    .newsletter form {
+        flex-direction: column;
+    }
+
+    .newsletter input[type="email"] {
+        border-right: 1px solid #ddd;
+        border-bottom: none;
+    }
+
+    .newsletter button {
+        border-top: none;
+    }
+
+    /* --- Oferta – szare tło dla wszystkich sekcji --- */
+    .oferta-zone--white {
+        background: #f9f9f9;
+    }
+
+    /* --- Oferta – heading blocks --- */
+    .oferta-heading {
+        font-size: 1.75rem;
+    }
+
+    .oferta-with {
+        margin-left: 0;
+        white-space: normal;
+        margin-top: 8px;
+    }
+
+    .oferta-heading-block {
+        padding: 36px 6%;
+    }
+
+    /* --- Oferta – mid quote --- */
+    .oferta-mid-quote {
+        padding: 40px 6%;
+        text-align: left;
+    }
+
+    .oferta-mid-quote blockquote {
+        padding: 0;
+    }
+
+    .mid-quote-big {
+        font-size: 1.5rem;
+    }
+
+    /* --- Oferta – package sections --- */
+    .oferta-zone .about-layout,
+    .oferta-zone .about-layout--image-left {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .oferta-zone .about-layout .about-image,
+    .oferta-zone .about-layout--image-left .about-image {
+        order: 1;
+        height: 300px;
+    }
+
+    .oferta-zone .about-layout .about-text,
+    .oferta-zone .about-layout--image-left .about-text {
+        order: 2;
+        padding: 28px 0;
+    }
+
+    .oferta-package-name {
+        font-size: 1.2rem !important;
+        margin-top: 14px !important;
+    }
+
+    .oferta-cta-btn {
+        margin-top: 14px;
+        padding: 10px 22px;
+    }
+
+    .oferta-zone .about-layout .about-text,
+    .oferta-zone .about-layout--image-left .about-text {
+        padding: 18px 0;
+    }
+
+    /* --- Oferta – closing quote --- */
+    .oferta-closing {
+        padding: 0 20px 60px;
+    }
+
+    .oferta-closing .oferta-heading {
+        font-size: 1.6rem;
+    }
+}
+
+/* === SMALL PHONE (max 480px) === */
+@media (max-width: 480px) {
+
+    /* --- Hero --- */
+    .hero {
+        height: 24vh;
+    }
+
+    .hero-portrait {
+        height: 112%;
+    }
+
+    .hero-text h1 {
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.55rem;
+        letter-spacing: 5px;
+    }
+
+    /* --- Quote --- */
+    .quote-section blockquote {
+        font-size: 1.1rem;
+    }
+
+    /* --- About --- */
+    .about-layout .about-image {
+        height: 380px;
+    }
+
+    .about-layout .about-image img {
+        object-position: center center;
+    }
+
+    .section-how .about-layout .about-image {
+        height: auto;
+    }
+
+    .section-how .about-layout .about-image img {
+        height: auto;
+        object-fit: initial;
+    }
+
+    /* --- Instagram --- */
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    .section-instagram .about-zone {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    /* --- Oferta --- */
+    .oferta-heading {
+        font-size: 1.4rem;
+    }
+
+    .mid-quote-big {
+        font-size: 1.2rem;
+    }
+
+    .oferta-zone .about-layout .about-image,
+    .oferta-zone .about-layout--image-left .about-image {
+        height: 250px;
+    }
+
+    .oferta-closing .oferta-heading {
+        font-size: 1.3rem;
+    }
+}
