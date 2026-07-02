@@ -264,7 +264,13 @@
     .oferta-zone .about-layout .about-image,
     .oferta-zone .about-layout--image-left .about-image {
         order: 1;
-        height: 300px;
+        height: auto;
+    }
+
+    .oferta-zone .about-layout .about-image img,
+    .oferta-zone .about-layout--image-left .about-image img {
+        height: auto;
+        object-fit: initial;
     }
 
     .oferta-zone .about-layout .about-text,
@@ -365,7 +371,13 @@
 
     .oferta-zone .about-layout .about-image,
     .oferta-zone .about-layout--image-left .about-image {
-        height: 250px;
+        height: auto;
+    }
+
+    .oferta-zone .about-layout .about-image img,
+    .oferta-zone .about-layout--image-left .about-image img {
+        height: auto;
+        object-fit: initial;
     }
 
     .oferta-closing .oferta-heading {
