@@ -512,6 +512,65 @@ body {
     color: #888;
 }
 
+/* === NEWSLETTER POPUP === */
+.newsletter-popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+}
+
+.newsletter-popup.open {
+    display: flex;
+}
+
+.newsletter-popup-box {
+    background: #fff;
+    padding: 48px 52px 44px;
+    text-align: center;
+    position: relative;
+    max-width: 360px;
+    width: 88%;
+}
+
+.newsletter-popup-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: #bbb;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.newsletter-popup-close:hover {
+    color: #555;
+}
+
+.newsletter-popup-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 2rem;
+    color: #555;
+    font-weight: 300;
+    margin: 10px 0 12px;
+}
+
+.newsletter-popup-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    color: #999;
+    line-height: 1.9;
+}
+
 /* === FOOTER === */
 .main-footer {
     background: #f9f9f9;

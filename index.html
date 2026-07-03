@@ -159,8 +159,9 @@
             <a href="mailto:kontakt@kate-kolinska.pl" class="contact-email">kontakt@kate-kolinska.pl</a>
             <p class="newsletter-label">zapisz się do newslettera</p>
             <div class="newsletter">
-                <form>
-                    <input type="email" placeholder="twój adres email" required>
+                <form action="https://formspree.io/f/xpqgogln" method="POST">
+                    <input type="hidden" name="_subject" value="Nowy zapis do newslettera – kate-kolinska.pl">
+                    <input type="email" name="email" placeholder="twój adres email" required>
                     <button type="submit">zapisz się</button>
                 </form>
             </div>
@@ -181,6 +182,16 @@
             </svg>
         </a>
     </footer>
+
+    <!-- NEWSLETTER POPUP -->
+    <div class="newsletter-popup" id="newsletter-popup">
+        <div class="newsletter-popup-box">
+            <button class="newsletter-popup-close" id="newsletter-popup-close">&#215;</button>
+            <div class="vertical-line"></div>
+            <p class="newsletter-popup-title">dziękujemy!</p>
+            <p class="newsletter-popup-text">Super! Zapisałeś się do newslettera Kate Kolinska.<br>Będziemy w kontakcie.</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

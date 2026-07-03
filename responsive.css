@@ -127,6 +127,23 @@
         padding-bottom: 40px;
     }
 
+    /* --- Newsletter popup --- */
+    .newsletter-popup-box {
+        width: 72%;
+        max-width: 300px;
+        padding: 34px 24px 30px;
+    }
+
+    .newsletter-popup-title {
+        font-size: 1.6rem;
+        margin: 8px 0 10px;
+    }
+
+    .newsletter-popup-text {
+        font-size: 0.72rem;
+        letter-spacing: 0.5px;
+    }
+
     /* --- Quote section – bliżej siebie, kreski krótsze --- */
     .vertical-line {
         height: 45px;
