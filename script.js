@@ -19,30 +19,28 @@ const newsletterForm = document.querySelector('.newsletter form');
 const popup = document.getElementById('newsletter-popup');
 const popupClose = document.getElementById('newsletter-popup-close');
 
-if (newsletterForm) {
-    newsletterForm.addEventListener('submit', async (e) => {
+if (newsletterForm && popup) {
+    newsletterForm.addEventListener('submit', function(e) {
         e.preventDefault();
         const data = new FormData(newsletterForm);
-        try {
-            const res = await fetch(newsletterForm.action, {
-                method: 'POST',
-                body: data,
-                headers: { 'Accept': 'application/json' }
-            });
-            if (res.ok) {
-                newsletterForm.reset();
-                popup.classList.add('open');
-            }
-        } catch (_) {}
+        newsletterForm.reset();
+        popup.classList.add('open');
+        fetch(newsletterForm.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        });
     });
 }
 
 if (popupClose) {
-    popupClose.addEventListener('click', () => popup.classList.remove('open'));
+    popupClose.addEventListener('click', function() {
+        popup.classList.remove('open');
+    });
 }
 
 if (popup) {
-    popup.addEventListener('click', (e) => {
+    popup.addEventListener('click', function(e) {
         if (e.target === popup) popup.classList.remove('open');
     });
 }
