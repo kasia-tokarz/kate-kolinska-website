@@ -328,17 +328,27 @@
         letter-spacing: 10px;
     }
 
+    .section-porozmawiajmy {
+        padding: 40px 5% 60px;
+    }
+
+    .porozmawiajmy-text {
+        margin: -20px auto 30px;
+        line-height: 1.9;
+        text-align: center;
+    }
+
     .porozmawiajmy-form {
         padding: 40px 6%;
     }
 
     .porozmawiajmy-grid {
         grid-template-columns: 1fr;
-        gap: 36px;
+        gap: 16px;
     }
 
     .porozmawiajmy-fields {
-        gap: 36px;
+        gap: 16px;
     }
 
     .porozmawiajmy-textarea {
@@ -349,21 +359,43 @@
 
 /* === MEDIA PAGE MOBILE (max 768px) === */
 @media (max-width: 768px) {
+    .section-media {
+        margin-top: -80px;
+    }
+
+    .section-media .about-header-lined {
+        display: none;
+    }
+
     .media-hero {
-        padding: 8px 6% 48px;
+        padding: 8px 5% 12px;
     }
 
     .media-hero-heading {
-        font-size: 2.2rem;
+        font-size: 1.76rem;
+        margin-top: 55px;
+    }
+
+    .media-heading-sub {
+        font-size: 1.18rem;
+    }
+
+    .media-hero-heading-line2 {
+        padding-left: 0;
     }
 
     .media-cards-wrap {
-        padding: 0 0 60px;
+        padding: 0 4% 20px;
+    }
+
+    .media-cards-wrap--last {
+        padding-bottom: 30px;
     }
 
     .media-cards-grid {
         grid-template-columns: 1fr;
         min-height: unset;
+        gap: 16px;
     }
 
     .media-card {
@@ -371,30 +403,66 @@
     }
 
     .media-card--video {
-        min-height: 280px;
+        min-height: 320px;
     }
 
     .media-manifesto {
-        padding: 40px 6% 36px;
+        padding: 16px 5% 30px;
+        text-align: left;
     }
 
     .media-manifesto-heading {
         font-size: 1.5rem;
+        text-align: right;
+    }
+
+    .media-manifesto-text {
+        font-size: 0.82rem;
+        text-align: center;
     }
 
     .media-features-wrap {
-        padding: 0 5% 60px;
+        padding: 0 4% 60px;
     }
 
     .media-features-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 14px;
+    }
+
+    .media-feature-card {
+        padding: 24px 22px 28px;
+    }
+
+    .media-feature-icon-img {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 16px;
+    }
+
+    .media-feature-title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    .media-feature-text {
+        font-size: 0.76rem;
+        line-height: 1.7;
     }
 }
 
 @media (max-width: 480px) {
     .media-hero-heading {
-        font-size: 1.8rem;
+        font-size: 1.44rem;
+        margin-top: 55px;
+    }
+
+    .media-card {
+        padding: 30px 5%;
+    }
+
+    .media-card--video {
+        min-height: 260px;
     }
 }
 

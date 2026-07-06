@@ -608,6 +608,15 @@ body {
     text-decoration: underline;
 }
 
+.porozmawiajmy-text span {
+    display: block;
+    margin-bottom: 14px;
+}
+
+.porozmawiajmy-text span:last-child {
+    margin-bottom: 0;
+}
+
 .porozmawiajmy-form {
     background: #f9f9f9;
     padding: 56px 56px 50px;
