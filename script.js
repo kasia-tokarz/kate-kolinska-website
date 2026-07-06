@@ -14,6 +14,17 @@ nav.querySelectorAll('a').forEach(link => {
     });
 });
 
+// Media page: video → photo on end
+const mediaVideo = document.getElementById('media-video');
+const mediaVideoPoster = document.getElementById('media-video-poster');
+
+if (mediaVideo && mediaVideoPoster) {
+    mediaVideo.addEventListener('ended', function() {
+        mediaVideo.style.opacity = '0';
+        mediaVideoPoster.style.opacity = '0.7';
+    });
+}
+
 // Newsletter popup
 const newsletterForm = document.querySelector('.newsletter form');
 const popup = document.getElementById('newsletter-popup');
@@ -42,6 +53,37 @@ if (popupClose) {
 if (popup) {
     popup.addEventListener('click', function(e) {
         if (e.target === popup) popup.classList.remove('open');
+    });
+}
+
+// Contact form popup
+const contactForm = document.querySelector('.porozmawiajmy-form');
+const contactPopup = document.getElementById('contact-popup');
+const contactPopupClose = document.getElementById('contact-popup-close');
+
+if (contactForm && contactPopup) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const data = new FormData(contactForm);
+        contactForm.reset();
+        contactPopup.classList.add('open');
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        });
+    });
+}
+
+if (contactPopupClose) {
+    contactPopupClose.addEventListener('click', function() {
+        contactPopup.classList.remove('open');
+    });
+}
+
+if (contactPopup) {
+    contactPopup.addEventListener('click', function(e) {
+        if (e.target === contactPopup) contactPopup.classList.remove('open');
     });
 }
 

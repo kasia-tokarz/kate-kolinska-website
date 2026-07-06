@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kate Kolinska | Personal Stylist – Coaching Stylu Warszawa</title>
+    <title>Kate Kolinska | Personal Stylist i Coaching Stylu Wroclaw</title>
     <meta
       name="description"
       content="Kate Kolinska – personal stylist pomagająca kobietom odkryć ich unikalny styl. Coaching stylu, przegląd szafy, zakupy osobiste. Warszawa i online."
@@ -11,15 +11,18 @@
     <link rel="canonical" href="https://kate-kolinska.pl/" />
 
     <!-- Open Graph -->
+
+    <meta property="og:site_name" content="Kate Kolinska" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://kate-kolinska.pl/" />
+    <meta property="og:site_name" content="Kate Kolinska" />
+
     <meta
       property="og:title"
-      content="Kate Kolinska | Personal Stylist – Coaching Stylu Warszawa"
+      content="Kate Kolinska | Personal Stylist – Coaching Stylu Wrocław"
     />
     <meta
       property="og:description"
-      content="Kate Kolinska – personal stylist pomagająca kobietom odkryć ich unikalny styl. Coaching stylu, przegląd szafy, zakupy osobiste. Warszawa i online."
+      content="Kate Kolinska – personal stylist pomagająca kobietom odkryć ich unikalny styl. Coaching stylu, przegląd szafy, zakupy osobiste. Wroclaw i online."
     />
     <meta
       property="og:image"
@@ -50,11 +53,11 @@
     <link rel="stylesheet" href="responsive.css" />
 
     <!-- Google tag (gtag.js) -->
-        <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-4ZHYT9PMK6"
-        ></script>
-        <script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4ZHYT9PMK6"
+    ></script>
+    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -74,6 +77,7 @@
             <li><a href="#">główna</a></li>
             <li><a href="#o-mnie">o mnie</a></li>
             <li><a href="oferta.html">oferta</a></li>
+            <li><a href="media.html">media</a></li>
             <li><a href="#kontakt">kontakt</a></li>
           </ul>
         </nav>
@@ -263,6 +267,31 @@
           <h2 class="about-title">napisz do mnie</h2>
         </div>
       </div>
+
+      <!-- POROZMAWIAJMY -->
+      <section class="section-porozmawiajmy">
+        <div class="porozmawiajmy-inner">
+<p class="porozmawiajmy-text">Jeśli czujesz, że to może być początek czegoś wyjątkowego, zrób pierwszy krok.<br><br>Napisz do mnie na <a href="mailto:kontakt@kate-kolinska.pl">kontakt@kate-kolinska.pl</a> lub zostaw wiadomość w formularzu poniżej.<br><br>Z przyjemnością poznam Twoją historię i potrzeby.</p>
+
+          <form class="porozmawiajmy-form" action="https://formspree.io/f/xpqgogln" method="POST">
+            <input type="hidden" name="_subject" value="Nowa wiadomość – kate-kolinska.pl">
+            <input type="hidden" name="_replyto" value="">
+            <div class="porozmawiajmy-grid">
+              <div class="porozmawiajmy-fields">
+                <input class="porozmawiajmy-input" type="text" name="name" placeholder="Imię" required>
+                <input class="porozmawiajmy-input" type="email" name="email" placeholder="Email" required>
+              </div>
+              <div class="porozmawiajmy-textarea-wrap">
+                <textarea class="porozmawiajmy-textarea" name="message" placeholder="Tutaj możesz wpisać swoją wiadomość" required></textarea>
+              </div>
+            </div>
+            <div class="porozmawiajmy-submit-wrap">
+              <button type="submit" class="porozmawiajmy-submit">wyślij wiadomość</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
       <div class="about-zone contact-zone">
         <p class="contact-intro">
           jeśli masz jakies pytania, potrzebujesz wiecej informacji lub masz
@@ -306,7 +335,7 @@
 
     <!-- FOOTER -->
     <footer class="main-footer">
-      <p>© 2026 kate kolinska &nbsp; / &nbsp; made by toki-soft</p>
+      <p>© 2026 kate kolinska &nbsp; / &nbsp; made by kate kolinska</p>
       <a
         href="https://www.instagram.com/kate_kolinska"
         target="_blank"
@@ -320,6 +349,20 @@
         </svg>
       </a>
     </footer>
+
+    <!-- KONTAKT POPUP -->
+    <div class="newsletter-popup" id="contact-popup">
+      <div class="newsletter-popup-box">
+        <button class="newsletter-popup-close" id="contact-popup-close">
+          &#215;
+        </button>
+        <div class="vertical-line"></div>
+        <p class="newsletter-popup-title">dziękujemy!</p>
+        <p class="newsletter-popup-text">
+          Wiadomość została wysłana.<br />Odezwę się wkrótce.
+        </p>
+      </div>
+    </div>
 
     <!-- NEWSLETTER POPUP -->
     <div class="newsletter-popup" id="newsletter-popup">
