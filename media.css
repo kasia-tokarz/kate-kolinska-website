@@ -145,6 +145,10 @@
     padding-top: 0;
 }
 
+.media-cards-wrap--all {
+    padding-bottom: 40px;
+}
+
 /* --- Manifesto --- */
 .media-manifesto {
     padding: 60px 5% 50px;

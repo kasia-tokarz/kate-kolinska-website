@@ -373,7 +373,7 @@
 
     .media-hero-heading {
         font-size: 1.76rem;
-        margin-top: 55px;
+        margin-top: 110px;
     }
 
     .media-heading-sub {
@@ -391,6 +391,11 @@
     .media-cards-wrap--last {
         padding-bottom: 30px;
     }
+
+    .media-card--video { order: 1; }
+    .media-card--rozmawiaj { order: 2; }
+    .media-card--dark { order: 3; }
+    .media-card--poznawaj { order: 4; }
 
     .media-cards-grid {
         grid-template-columns: 1fr;
