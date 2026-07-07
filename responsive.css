@@ -321,6 +321,15 @@
     }
 }
 
+/* === FOOTER MOBILE (max 768px) === */
+@media (max-width: 768px) {
+    .main-footer {
+        flex-direction: column;
+        gap: 10px;
+        padding: 22px 20px;
+    }
+}
+
 /* === POROZMAWIAJMY MOBILE (max 768px) === */
 @media (max-width: 768px) {
     .porozmawiajmy-heading {
